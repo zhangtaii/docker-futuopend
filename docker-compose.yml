@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   futuopend:
-    image: futu-open-d:2.9.750
+    image: futu-open-d:6.1.2608
     ports: 
       - 11111:11111
     #  - 22222:22222
@@ -17,5 +17,5 @@ services:
       restart_policy:
         condition: any
         delay: 5s
-        max_attempts: 3
+        #max_attempts: 3
         window: 60s

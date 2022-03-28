@@ -32,10 +32,10 @@
 		<!-- <qot_push_frequency>1000</qot_push_frequency> -->
 		<!-- Telnet监听地址,不填默认127.0.0.1 -->
 		<!-- Telnet listening address. 127.0.0.1 by default -->
-		<telnet_ip>127.0.0.1</telnet_ip>
+		<!-- <telnet_ip>127.0.0.1</telnet_ip> -->
 		<!-- Telnet监听端口 -->
 		<!-- Telnet listening port -->
-		<telnet_port>22222</telnet_port>
+		<!-- <telnet_port>22222</telnet_port> -->
 		<!-- API协议加密私钥文件路径,不设置则不加密 -->
 		<!-- File path for private key for API protocol enctyption. If not set, it will not be encrypted. -->
 		<!-- <rsa_private_key>~/rsa</rsa_private_key> -->
@@ -69,4 +69,16 @@
 		<!-- WebSocket证书文件路径，不配置则不启用SSL，需要和私钥同时配置 -->
 		<!-- WebSocket certificate file path. SSL will not work if not set. WebSocket certificate and private key need to be set at the same time -->
 		<!-- <websocket_cert>~/cer</websocket_cert> -->
+	<!-- FUTU US 专用参数 -->
+	<!-- Specific parameters for FUTU US -->
+	<!-- 是否开启 防止被标记为日内交易者 的功能, 0：否，1：是-->	
+		<!-- 开启功能后，我们会在您将要被标记 PDT 时阻止您的下单，但不确保您一定不被标记。若您被标记 PDT，当您的账户权益小于$25000时，您将无法开仓。-->	
+		<!-- Whether to turn on the Pattern Day Trade Protection, 0: No, 1: Yes  -->
+		<!-- When this parameter is set as 1, we will prevent you from placing orders which might mark you as a Pattern Day Trader(PDT). The Protection can not guarentee that you won't be marked as a PDT. If you are marked as a PDT, you will not be allowed to open new positions until your equity is above $25000.-->
+		<pdt_protection>1</pdt_protection>
+		<!-- 是否开启 日内交易保证金追缴预警 的功能, 0：否，1：是 -->	
+		<!-- 开启功能后，我们会在您即将开仓下单超出剩余日内交易购买力前阻止您的下单。提醒您当前开仓订单的市值大于您的剩余日内交易购买力，若您在今日平仓当前标的，您将会收到日内交易保证金追缴通知（Day-Trading Call），只能通过存入资金才能解除。 -->	
+		<!-- Whether to turn on the Day-Trading Call Warning, 0: No, 1: Yes  -->
+		<!-- When this parameter is set as 1, we will prevent you from placing orders which might exceed your remaining day-trading buying power. We will alert you that you are placing orders that exceed your remaining day-trading buying power. If you close the positions today, you will receive a Day-Trading Call. The DT Call can ONLY be met by depositing funds in the full amount of the call.-->
+		<dtcall_confirmation>1</dtcall_confirmation>
 </futu_opend>
